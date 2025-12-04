@@ -42,6 +42,6 @@ docker run -p 3000:3000 modern-training-tracker
 
 ## Final Prototype & Documentation
 
-- **Live demo / video walkthrough:** _add your Loom/YouTube link here_
-- **Confluence project space:** _add your Confluence link here_
-- **Related tools:** _add Jira board, Docker Hub repo, etc. if you have them_
+- **Live demo / video walkthrough:**
+- **Confluence project space:**
+- **Related tools:**
