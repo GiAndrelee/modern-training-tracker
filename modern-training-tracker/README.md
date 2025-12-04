@@ -43,5 +43,7 @@ docker run -p 3000:3000 modern-training-tracker
 ## Final Prototype & Documentation
 
 - **Live demo / video walkthrough:**
-- **Confluence project space:**
-- **Related tools:**
+- 
+- **Confluence project space:** **Confluence Space:**  
+https://my-team-v5ajsx7k.atlassian.net/wiki/spaces/MTT/overview
+
