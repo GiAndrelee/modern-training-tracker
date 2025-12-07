@@ -1,11 +1,16 @@
 const express = require("express");
 const path = require("path");
+const { execSync } = require('child_process');
 const app = express();
 
 app.use(express.json());
 
 // Serve the demo frontend from the project's `demo` folder
 app.use(express.static(path.join(__dirname, '..', 'demo')));
+
+// Health metadata
+const pkg = require(path.join(__dirname, '..', 'package.json'));
+const START_TIME = Date.now();
 
 const PORT = process.env.PORT || 3000;
 
@@ -31,7 +36,22 @@ let goals = [
 
 // Health check
 app.get("/health", (req, res) => {
-  res.json({ status: "ok", service: "modern-training-tracker" });
+  const uptimeSeconds = Math.floor((Date.now() - START_TIME) / 1000);
+  let gitSha = null;
+  try {
+    gitSha = execSync('git rev-parse --short HEAD').toString().trim();
+  } catch (e) {
+    // ignore - git may not be available in all environments
+  }
+
+  res.json({
+    status: "ok",
+    service: "modern-training-tracker",
+    version: pkg.version,
+    gitSha,
+    uptime: uptimeSeconds,
+    timestamp: new Date().toISOString()
+  });
 });
 
 // ---- Workouts CRUD ----
