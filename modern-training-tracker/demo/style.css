@@ -1,0 +1,13 @@
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  margin: 24px;
+  color: #222;
+}
+main { max-width: 760px; }
+h1 { margin-bottom: 8px; }
+section { margin-top: 18px; padding: 12px; border: 1px solid #eee; border-radius: 6px; }
+label { display: block; margin: 6px 0; }
+input { margin-left: 8px; }
+button { margin-top: 8px; }
+pre { background: #f8f8f8; padding: 8px; border-radius: 4px; overflow:auto }
+ul { padding-left: 20px; }
